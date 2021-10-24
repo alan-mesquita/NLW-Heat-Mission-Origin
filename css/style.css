@@ -86,3 +86,73 @@ ul {
 
     justify-content: center;
 }
+
+/* ----------------- MEDIA QUERIES -----------------*/
+
+@media (min-width: 800px) {
+    main {
+      background: url(/images/desktop.svg) no-repeat center/cover;
+      background-color: #1a1a1a;
+    }
+    
+    p{
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    ul {
+        margin-top: 2rem;
+    }
+
+    .container{
+        background: url(/images/mask.svg) center;
+        background-color: #202024;
+        max-width: 358px;
+        height: 540px;
+        margin: 8.5rem auto 0;
+    }
+
+    .avatar, .avatar img {
+        margin: 4.5rem auto 0;
+    }
+
+    .faixaQuebra {
+        display: flex;
+        justify-content: center;
+    }
+
+    .faixa {
+        position: absolute;
+        z-index: 1;
+    }
+
+    .quebra {
+        position: relative;
+        top: 156px;
+    }
+}
+
+/* ----------------- Animations ----------------- */
+      
+@keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+  .spin {
+    animation-name: spinning;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+.social-btn {
+  position: relative;
+  border-radius: 0.15rem;
+  width: 50px;
+  top: 0;
+  transition: all ease 0.3s;
+}
+.social-btn:hover {
+  border-radius: 0.5rem;
+  top: -5px;
+} 
