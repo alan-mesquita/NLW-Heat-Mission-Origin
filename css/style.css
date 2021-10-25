@@ -225,3 +225,10 @@ ul {
         width: 120px;
     }
 }
+<<<<<<< HEAD
+=======
+.social-btn:hover {
+  border-radius: 0.5rem;
+  top: -5px;
+} 
+>>>>>>> 2d8414f08d85e0ad458fb0a827d575189fc81f28
