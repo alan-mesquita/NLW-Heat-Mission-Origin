@@ -1,5 +1,7 @@
-<h1 align="center"><strong>&lt;nlw/&gt; Heat - heating for the</strong><br>
-<img src="./images/logo-do-while-2021.png"/></h1>
+<div style= "background-color:#000">
+  <h1 align="center"><strong>&lt;nlw/&gt; Heat - heating for the</strong><br>
+  <img src="./images/logo-do-while-2021.png"/></h1>
+</div>
 
 <p align="center">
   <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
