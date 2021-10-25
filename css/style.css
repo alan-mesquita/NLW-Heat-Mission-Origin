@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    background: url(/images/background.svg) no-repeat center/cover;
+    background: url(../images/background.svg) no-repeat center/cover;
     width: 100vw;
     min-height: 812px;
     height: 100vh;
@@ -91,8 +91,10 @@ ul {
 
 @media (min-width: 800px) {
     main {
-      background: url(/images/desktop.svg) no-repeat center/cover;
+      background: url(../images/desktop.svg) no-repeat center/cover;
       background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
     }
     
     p{
@@ -102,17 +104,29 @@ ul {
 
     ul {
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     .container{
-        background: url(/images/mask.svg) center;
+        background: url(../images/mask.svg) center;
         background-color: #202024;
         max-width: 358px;
         height: 540px;
-        margin: 8.5rem auto 0;
+        margin: -1rem auto 0;
+        border-radius: 0.3rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        perspective: 600px;
     }
 
-    .avatar, .avatar img {
+    .avatar{
+        margin: 0 auto;
+    }
+    
+    .avatar img {
         margin: 4.5rem auto 0;
     }
 
@@ -122,37 +136,92 @@ ul {
     }
 
     .faixa {
-        position: absolute;
-        z-index: 1;
+        position: relative;
+        z-index: 2;
     }
 
     .quebra {
-        position: relative;
+        position: absolute;
         top: 156px;
+        z-index: 1;
     }
-}
 
 /* ----------------- Animations ----------------- */
-      
-@keyframes spinning {
-    from { transform: rotate(0deg) }
-    to { transform: rotate(360deg) }
-  }
-  .spin {
-    animation-name: spinning;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
+            
+    @keyframes spinning {
+        from { transform: rotate(0deg) }
+        to { transform: rotate(360deg) }
+    }
 
-.social-btn {
-  position: relative;
-  border-radius: 0.15rem;
-  width: 50px;
-  top: 0;
-  transition: all ease 0.3s;
+    .spin {
+        animation-name: spinning;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+      
+    .social-btn {
+        position: relative;
+        border-radius: 0.15rem;
+        width: 50px;
+        top: 0;
+        transition: all ease 0.3s;
+    }
+      
+    .social-btn:hover {
+        border-radius: 0.5rem;
+        top: -5px;
+    }
+
+/* ----------------- Card Flip ----------------- */
+
+    .scene {
+        width: 358px;
+        height: 680px;
+    }
+      
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        transition: transform 2s;
+        transform-style: preserve-3d;
+    }
+      
+    .card.is-flipped {
+        transform: rotateY(180deg);
+    }
+      
+    .card__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+      
+    .card__face--back {
+        background: url(../images/mask.svg);
+        background-color: #1e1e22;
+        max-width: 358px;
+        height: 540px; 
+        transform: rotateY(180deg);
+    }
+      
+    .card__face--back a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card__face--back a :nth-child(1) {
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+        width: 250px;
+    }
+
+    .card__face--back a :nth-child(3) {
+        margin-top: 2rem;
+        width: 120px;
+    }
 }
-.social-btn:hover {
-  border-radius: 0.5rem;
-  top: -5px;
-} 
